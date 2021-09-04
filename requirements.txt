@@ -31,11 +31,11 @@ decorator==4.4.2
 defusedxml==0.6.0
 dicttoxml==1.7.4
 distorm3==3.4.1
-Django==1.11.29
+Django==3.2.7
 dnslib==0.9.7
 dnspython==1.16.0
 docutils==0.14
-easygui==0.8
+easygui==0.98.2
 EditorConfig==0.12.1
 Elixir==0.7.1
 empy==3.3.2
