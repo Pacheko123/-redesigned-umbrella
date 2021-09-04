@@ -16,8 +16,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="{% url 'index' %}">TruthCheck.</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -43,16 +41,16 @@
           <div class=" action">
 
             <div class="news-item">
-              <form id="news-form" method="POST">
+              <form id="news-form" method="POST" action="/">
                {% csrf_token %}
 
-                <input type="textarea" name="news-item" placeholder="Paste news item here" id="news">
+                <input type="textarea" name="news" placeholder="Paste news item here" id="news">
+                <!-- <a href="#why-us" type="submit" class="btn-get-started scrollto" name="getResult" id="getResult">Get Started</a> -->
+                <button class="btn-get-started scrollto" type="submit" id="getstarted" name="send">Get Started</button> 
 
               </form>
             </div>
             
-            <a href="#why-us" class="btn-get-started scrollto" id="getResult">Get Started</a>
-            <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -65,39 +63,6 @@
 
   <main id="main">
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About Us</h2>
-        </div>
-
-        <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
     <!-- ======= analysis results Section ======= -->
     <section id="why-us" class="why-us section-bg">
       <div class="container-fluid" data-aos="fade-up">
@@ -106,12 +71,15 @@
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
-            <div class="content">
+            <div class="content" id="content">
               <h3>Our analysis produced the following result about your news item<strong></strong></h3>
               
               <p>
-                <h2 id="index">Truth Index:</h2>
+                <h2 id="index">Truth Index: </h2><button type="button" class="" style="background: #47b2e4; border: none; min-height: 50px;min-width: 100px;" >
+                  <span style="font-size: 18px;">{{ worded }}</span><span class="badge badge-light" style="font-size: 18px;">{{probs}}</span>
+                  <span class="sr-only">{{probs}}</span></button><b></b>
               </p>
+              
             </div>
 
             <div class="accordion-list">
@@ -119,27 +87,18 @@
                 <li>
                   <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Other sources with similar news items<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                    <p>
-                      Nothing to show here yet
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Other sources with similar news items<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Nothing to show here yet
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Other sources with similar news items<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Nothing to show here yet
-                    </p>
+                    
+                      <div class="jumbotron">
+                      <h4 >{{title}}</h4>
+                      <p class="lead" style="font-family: 'Jost', sans-serif;font-size: 16px;">{{description}}</p>
+                      <hr class="my-4">
+                      <p style="font-family: 'Jost', sans-serif;">{{author}} | {{source}} | Date published:{{date}}</p>
+                      <p class="lead" id="news12">
+                        <a class="btn-read-news text-center" href="{{url}}" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 28px;" target="_blank">Read News</a>
+                      </p>
+                      
+                    </div>
+                    
                   </div>
                 </li>
 
@@ -258,47 +217,21 @@
 
         <div class="faq-list">
           <ul>
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Has Trump really cut the tied with Taliban? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                  This news item is verified as true
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="500">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Is Safaricom PLC stock projected to spike in the next months? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                  This news item is verified as true
                 </p>
               </div>
             </li>
@@ -307,7 +240,8 @@
         </div>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section-->
+    </section>
+    <!-- End Frequently Asked Questions Section-->
 
     <!-- ======= Contact Section ======= -->
 
@@ -333,9 +267,6 @@
     <div class="footer-top">
       <div class="container">
        <!--  <div class="row">
-
-          
-
         </div> -->
       </div>
     </div>
@@ -361,30 +292,37 @@
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 
-  {% block javascript}  
+  {% block javascript %}  
     <script>
-    /*
-        On submiting the form, send the POST ajax
-        request to server and after successfull submission
-        display the object.
-    */
-    $("#getResult").click(function (e) {
-        // alert('I got clicked and thats fine');
-        var name = '{{name}}';
-        document.getElementById('index').after(name);
+      var source = document.getElementById('why-us');
+      
+
+    $("#getstarted").click(function (e) {
+        
+        var name = '{{item}}';
+        var value = document.getElementById('news').value;
+        if (value == "") {
+          alert("Please copy paste the news item in the input text");
+
+        }
+
+         $('html, body').animate({
+                    scrollTop: $("#why-us").offset().top
+                }, 2000);
+
+         return 1;
     })
 </script>
 
 
 
-  {% endblock}
+  {% endblock %}
 
 </body>
 
