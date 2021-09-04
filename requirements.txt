@@ -9,7 +9,6 @@ backports.functools-lru-cache==1.5
 backports.shutil-get-terminal-size==1.0.0
 BBQSQL==1.0
 bcrypt==3.1.6
-bdfproxy==0.0.0
 beautifulsoup4==4.7.1
 bleach==3.2.2
 BlindElephant==1.0
