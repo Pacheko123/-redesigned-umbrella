@@ -1,4 +1,4 @@
-
+adns-python==1.2.1
 argcomplete==1.8.1
 asn1crypto==0.24.0
 atomicwrites==1.1.5
