@@ -21,9 +21,15 @@ class Sources:
 		res = conn.getresponse()
 		data1 = res.read()
 		data = data1.decode('utf-8')
-		news = json.loads(data)
-		news = news['data'][0]
-		return news['author'],news['title'],news['description'],news['url'],news['source'],news['published_at']
+		news = json.loads(data)	
+		print(json.loads(data))
+
+		try:
+			news = news['data'][0]
+			return news['author'],news['title'],news['description'],news['url'],news['source'],news['published_at']
+		except:
+
+			return news['author'],news['title'],news['description'],news['url'],news['source'],news['published_at']
 
 		print(url)
 		print(type(news))

@@ -4,6 +4,7 @@ import requests
 from django.http import HttpResponse
 from sources.sources import Sources
 from classifier.prediction import Predict
+from googletrans import Translator
 
 # Create your views here.
 
@@ -12,11 +13,14 @@ def index(request):
     print(keyword)
     context={'item':'', 'result':'' }
     if request.method == 'POST':
+
         item = request.POST['news']
-        # source = Sources()
-        # source.extract(keyword)
         if item:
-            # print(item)
+            translator = Translator()
+            translation = translator.translate(item,dest='en')
+            print(type(translation))
+            item = translation.text
+            print(item)
             # Getting news sources related to the serached item
             news_source = Sources()
             author,title,description,url,source,date = news_source.extract(item)
@@ -33,6 +37,7 @@ def index(request):
             worded = worded.upper()
 
             print(f"Probs is  {prob}   ,and  worded is  {worded}")
+            print(type(item))
 
             context={
             'item':item, 'worded':worded , "probs":prob ,'title':title,'author':author,'description':description,
