@@ -16,7 +16,6 @@ boto3==1.9.86
 botocore==1.12.71
 certifi==2018.8.24
 chardet==3.0.4
-CherryTree==0.38.5
 ## FIXME: could not find svn URL in dependency_links for this package:
 chirp===daily-20190104
 Click==7.0
