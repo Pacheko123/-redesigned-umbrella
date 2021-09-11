@@ -27,12 +27,13 @@ SECRET_KEY = '(d$x1=igt0@c!+)u-vj3kvvlby4r+fy0s&&wxe(yi^r7w+v5j5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['truthcheck.heroku.com']
+ALLOWED_HOSTS = ['truthcheck.heroku.com','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'core.apps.CoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
