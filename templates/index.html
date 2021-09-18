@@ -28,7 +28,8 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -66,14 +67,10 @@
     <!-- ======= analysis results Section ======= -->
     <section id="why-us" class="why-us section-bg">
       <div class="container-fluid" data-aos="fade-up">
-
         <div class="row">
-
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
             <div class="content" id="content">
               <h3>Our analysis produced the following result about your news item<strong></strong></h3>
-              
               <p>
                 <h2 id="index">Truth Index: </h2><button type="button" class="" style="background: #47b2e4; border: none; min-height: 50px;min-width: 100px;" >
                   <span style="font-size: 18px;">{{ worded }}</span><span class="badge badge-light" style="font-size: 18px;">{{probs}}</span>
@@ -90,29 +87,23 @@
                     
                       <div class="jumbotron">
                       <h4 >{{title}}</h4>
-                      <p class="lead" style="font-family: 'Jost', sans-serif;font-size: 16px;">{{description}}</p>
+                      <p class="lead" id="description-lead" style="font-family: 'Jost', sans-serif;font-size: 16px;">{{description}}</p>
                       <hr class="my-4">
                       <p style="font-family: 'Jost', sans-serif;">{{author}} | {{source}} | Date published:{{date}}</p>
                       <p class="lead" id="news12">
                         <a class="btn-read-news text-center" href="{{url}}" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 28px;" target="_blank">Read News</a>
+                        <a class="btn-read-news text-center" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 28px;" target="_blank">Feedback</a>
                       </p>
-                      
                     </div>
-                    
                   </div>
                 </li>
-
               </ul>
             </div>
-
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{% static "  assets/img/why-us.png" %}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"  data-aos="zoom-in" data-aos-delay="150">&nbsp;
 
             <div id="skills" class="skills" data-aos="fade-up">
-
-            
-            
               <h3>Credibility ratios </h3>
             <p class="fst-italic">
              
@@ -132,40 +123,33 @@
                   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
-
               <div class="progress">
                 <span class="skill">NEWS SUBJECT<i class="val">75%</i></span>
                 <div class="progress-bar-wrap">
                   <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
-
               <div class="progress">
                 <span class="skill">AUTHOR PUBLICATION HISTORY<i class="val">55%</i></span>
                 <div class="progress-bar-wrap">
                   <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
       </div>
     </section>
     <!-- End Analysis Results Section -->
 
-    
     <!-- ======= Tools Section ======= --> 
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Tools & techniques</h2>
           <p>The following are the various tools and techniques we use to perform the intelligent analysis .</p>
         </div>
-
         <div class="row">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
@@ -174,7 +158,6 @@
               <p>We use probabilistic context free grammar to devide items into lexicons</p>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
@@ -182,7 +165,6 @@
               <p>We use probabilistic context free grammar to devide items into lexicons</p>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
@@ -190,7 +172,6 @@
               <p> Employ web scraping tools to obtain data for training the model </p>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-layer"></i></div>
@@ -198,26 +179,19 @@
               <p>The reliable news APIs provide news updates from various subjects</p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
     <!-- End Services Section -->
-
-    
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Top Trending News</h2>
           <p>The truth values of the top trending news items.</p>
         </div>
-
         <div class="faq-list">
           <ul>
-
             <li data-aos="fade-up" data-aos-delay="400">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Has Trump really cut the tied with Taliban? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
@@ -226,7 +200,6 @@
                 </p>
               </div>
             </li>
-
             <li data-aos="fade-up" data-aos-delay="500">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Is Safaricom PLC stock projected to spike in the next months? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
@@ -235,20 +208,16 @@
                 </p>
               </div>
             </li>
-
           </ul>
         </div>
-
       </div>
     </section>
 
     <!-- ======= Contact Section ======= -->
 
   </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-newsletter" id="newsletter">
       <div class="container">
         <div class="row justify-content-center">
@@ -264,14 +233,12 @@
         </div>
       </div>
     </div>
-
     <div class="footer-top">
       <div class="container">
        <!--  <div class="row">
         </div> -->
       </div>
     </div>
-
     <div class="container footer-bottom clearfix">
       <div class="copyright">
         &copy; Copyright <strong><span>TRUTHCHECK</span></strong>. All Rights Reserved
@@ -283,10 +250,8 @@
     </div>
   </footer>
   <!-- End Footer -->
-
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <!-- Vendor JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
@@ -298,33 +263,30 @@
 
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
-
   {% block javascript %}  
     <script>
       var source = document.getElementById('why-us');
-      
-
     $("#getstarted").click(function (e) {
         
         var name = '{{item}}';
         var value = document.getElementById('news').value;
+        var news_content = document.getElementById('description-lead').innerHTML;
         if (value == "") {
-          alert("Please copy paste the news item in the input text");
-
+          alert("Please copy paste the news item in the input text"+news_content);
         }
-
          $('html, body').animate({
                     scrollTop: $("#why-us").offset().top
                 }, 2000);
 
          return 1;
     })
+
+        if (news_content == "") {
+          var read_btn = document.getElementsByClassName('btn-read-news');
+          console.log('here we go');
+          read_btn.style.display = "none";
+        }
 </script>
-
-
-
   {% endblock %}
-
 </body>
-
 </html>
