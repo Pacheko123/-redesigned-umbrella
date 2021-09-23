@@ -16,17 +16,16 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="{% url 'index' %}">TruthCheck.</a></h1>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Know How</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Trending</a></li>
+          <li><a class="nav-link scrollto" href="#services">Techniques</a></li>
           <li><a class="getstarted scrollto" href="#newsletter">Sign Up</a></li>
         </ul> 
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
+      <!-- .navbar -->
     </div>
   </header>
   <!-- End Header -->
@@ -72,9 +71,9 @@
             <div class="content" id="content">
               <h3>Our analysis produced the following result about your news item<strong></strong></h3>
               <p>
-                <h2 id="index">Truth Index: </h2><button type="button" class="" style="background: #47b2e4; border: none; min-height: 50px;min-width: 100px;" >
+              <h2 id="index">Truth Index: <!-- </h2><button type="button" class="" style="background: #47b2e4; border: none; min-height: 50px;min-width: 100px;" > --></h2>
                   <span style="font-size: 18px;">{{ worded }}</span><span class="badge badge-light" style="font-size: 18px;">{{probs}}</span>
-                  <span class="sr-only">{{probs}}</span></button><b></b>
+                  <span class="sr-only">{{probs}}</span><b></b>
               </p>
               
             </div>
@@ -89,9 +88,9 @@
                       <h4 >{{title}}</h4>
                       <p class="lead" id="description-lead" style="font-family: 'Jost', sans-serif;font-size: 16px;">{{description}}</p>
                       <hr class="my-4">
-                      <p style="font-family: 'Jost', sans-serif;">{{author}} | {{source}} | Date published:{{date}}</p>
+                      <p style="font-family: 'Jost', sans-serif;">{{author}} {{source}} {{date}}</p>
                       <p class="lead" id="news12">
-                        <a class="btn-read-news text-center" href="{{url}}" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 28px;" target="_blank">Read News</a>
+                        <a class="btn-read-news text-center" href="{{url}}" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 20px;" target="_blank">Read News</a>
                         <a class="btn-read-news text-center" style="background: #47b2e4;min-height: 50px;color: #fff;padding: 10px 28px 11px 28px;" target="_blank">Feedback</a>
                       </p>
                     </div>
@@ -100,6 +99,7 @@
               </ul>
             </div>
           </div>
+
 
           <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"  data-aos="zoom-in" data-aos-delay="150">&nbsp;
 
@@ -136,6 +136,11 @@
                 </div>
               </div>
             </div>
+
+              Are you satisfied with the analysis?<br>
+
+              Yes:<input type="radio"><br>
+              No:<input type="radio">
           </div>
         </div>
       </div>
@@ -183,7 +188,7 @@
       </div>
     </section>
     <!-- End Services Section -->
-    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- Top trending news section-->
     <section id="faq" class="faq section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">

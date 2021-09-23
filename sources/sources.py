@@ -27,7 +27,7 @@ class Sources:
 
         try:
             news = news['data'][0]
-            return news['author'], news['title'], news['description'], news['url'], news['source'], news['published_at']
+            return news['author']+'|', news['title'], news['description'], news['url'], news['source']+'|', 'Date published:'+news['published_at']
         except:
 
             return news['author'], news['title'], news['description'], news['url'], news['source'], news['published_at']
